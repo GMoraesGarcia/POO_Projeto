@@ -1,2 +1,2 @@
 # POO_Projeto
-Projeto banco
+Projeto Gestão acadêmica
