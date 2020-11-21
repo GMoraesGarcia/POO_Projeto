@@ -49,7 +49,7 @@ public class EstudantePos extends Estudante_2{
     
      @Override
     public String toString() {
-        return "Estudante{" + "id=" + id + ", nome=" + nome + ", email=" + email + "Tema= " + tema + "Orientador = " +orientador +
+        return "Estudante Pos Graduação{" + "id=" + id + ", nome=" + nome + ", email=" + email + "Tema= " + tema + "Orientador = " +orientador +
                 "Total de Créditos=" + getTotalCreditos() +'}';
                             
     }

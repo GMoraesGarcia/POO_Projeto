@@ -17,7 +17,7 @@ public class GestaoAcademicaApp_2 {
         Scanner sc = new Scanner(System.in);
 
         Centro_Universitario_2 Senac = new Centro_Universitario_2("Senac");
-        Senac.carregarDadosArquivo("disciplinas-abadbdceeb.txt", "estudantes-abadbdceeb.txt", "matriculas-abadbdceeb.txt");
+        Senac.carregarDadosArquivo("disciplinas.txt", "estudantes.txt", "matriculas.txt");
         int opcao = 0;
         String codigo;
         long id;

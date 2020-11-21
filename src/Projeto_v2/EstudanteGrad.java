@@ -41,7 +41,7 @@ public class EstudanteGrad extends Estudante_2 {
 
     @Override
     public String toString() {
-        return horasAtividade + "Estudante{" + "id=" + id + ", nome=" + nome + ", email=" + email + " , Horas Complementares = " +horasAtividade +
+        return "Estudante Graduação{" + "id=" + id + ", nome=" + nome + ", email=" + email + " , Horas Complementares = " +horasAtividade +
                                 "Total de Créditos =" + getTotalCreditos() + '}';
     }
     

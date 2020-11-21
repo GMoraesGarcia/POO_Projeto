@@ -149,7 +149,7 @@ public class Centro_Universitario_2 {
             r3.close();
 
         } catch (IOException | NumberFormatException e) {
-            System.exit(-1);
+            System.out.println(e);
         }
 
     }
