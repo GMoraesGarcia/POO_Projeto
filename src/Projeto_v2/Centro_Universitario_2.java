@@ -77,14 +77,29 @@ public class Centro_Universitario_2 {
                 if (linhaArqEst == null) {
                     break;
                 }
+
                 vEstudante = linhaArqEst.split(":");
 
-                /*Estudante est = new Estudante(Integer.parseInt(vEstudante[0]),
-                        vEstudante[1],
-                        vEstudante[2]);
+                if (vEstudante.length == 5) {
 
-                this.estudante.add(est);*/
+                    Estudante_2 est = new EstudanteGrad(Integer.parseInt(vEstudante[0]),
+                            vEstudante[1],
+                            vEstudante[2],
+                            Integer.parseInt(vEstudante[3]));
+                    this.estudante.add(est);
+                    
+                }else{
+                    
+                    Estudante_2 est = new EstudantePos(Integer.parseInt(vEstudante[0]),
+                            vEstudante[1],
+                            vEstudante[2],
+                            vEstudante[3],
+                            vEstudante[4]);
+                    this.estudante.add(est);
+                    
+                }
             }
+
             r.close();
 
             while (linhaArqDis != null) {
