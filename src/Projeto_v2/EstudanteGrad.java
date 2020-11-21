@@ -5,15 +5,16 @@
  */
 package Projeto_v2;
 
-import Projeto_v1.Centro_Universitario;
+import java.util.List;
 
 /**
  *
  * @author Gabriel
  */
-public class EstudanteGrad extends Estudante_2{
+public class EstudanteGrad extends Estudante_2 {
+
     private int horasAtividade;
-    
+
     public EstudanteGrad(long id, String nome, String email, int horasAtividade) {
         super(id, nome, email);
     }
@@ -27,8 +28,15 @@ public class EstudanteGrad extends Estudante_2{
     }
 
     @Override
-    public int getTotalCreditos(long id, Centro_Universitario centro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getTotalCreditos() {
+        List<Disciplina_2> dis = super.getDisciplinasMatriculadas();
+        int somaCreditosDisciplina = 0;
+        int resultado = horasAtividade;
+        for (Disciplina_2 d : dis) {
+            somaCreditosDisciplina += d.getCreditos();
+        }
+        resultado += somaCreditosDisciplina;
+        return resultado;
     }
-    
+
 }

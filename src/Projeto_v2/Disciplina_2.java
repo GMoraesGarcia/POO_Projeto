@@ -1,6 +1,6 @@
 package Projeto_v2;
 
-import Projeto_v1.*;
+
 import java.util.ArrayList;
 import java.util.List;
 

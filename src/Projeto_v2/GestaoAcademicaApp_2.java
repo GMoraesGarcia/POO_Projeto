@@ -5,7 +5,7 @@
  */
 package Projeto_v2;
 
-import Projeto_v1.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,7 +16,7 @@ public class GestaoAcademicaApp_2 {
 
         Scanner sc = new Scanner(System.in);
 
-        Centro_Universitario Senac = new Centro_Universitario("Senac");
+        Centro_Universitario_2 Senac = new Centro_Universitario_2("Senac");
         Senac.carregarDadosArquivo("disciplinas-abadbdceeb.txt", "estudantes-abadbdceeb.txt", "matriculas-abadbdceeb.txt");
         int opcao = 0;
         String codigo;
@@ -68,11 +68,11 @@ public class GestaoAcademicaApp_2 {
         }
     }
 
-    public static ArrayList getNomeNumero2(Centro_Universitario centro) {
+    public static ArrayList getNomeNumero2(Centro_Universitario_2 centro) {
 
         ArrayList nomeNumero = new ArrayList();
 
-        for (Estudante e : centro.getEstudantes()) {
+        for (Estudante_2 e : centro.getEstudantes()) {
 
             nomeNumero.add("\nEstudante {id = " + e.getId() + " Nome = " + e.getNome() + "}");
 
@@ -80,21 +80,21 @@ public class GestaoAcademicaApp_2 {
         return nomeNumero;
     }
 
-    public static ArrayList getCodigoDisciplina2(Centro_Universitario centro) {
+    public static ArrayList getCodigoDisciplina2(Centro_Universitario_2 centro) {
 
         ArrayList codDisciplina = new ArrayList();
 
-        for (Disciplina d : centro.getDisciplinas()) {
+        for (Disciplina_2 d : centro.getDisciplinas()) {
 
             codDisciplina.add("\n{Código da disciplina: " + d.getCodigo() + "}");
         }
         return codDisciplina;
     }
 
-    public static List getEstudantesPorDisciplina(String codigo, Centro_Universitario centro) {
+    public static List getEstudantesPorDisciplina(String codigo, Centro_Universitario_2 centro) {
 
         List estudantes = new ArrayList();
-        for (Disciplina d : centro.getDisciplinas()) {
+        for (Disciplina_2 d : centro.getDisciplinas()) {
             if (codigo.equals(d.getCodigo())) {
                 estudantes = d.getEstudantesMatriculados();
             }
@@ -102,17 +102,17 @@ public class GestaoAcademicaApp_2 {
         return estudantes;
     }
 
-    public static int getNumeroAlunos(String codigo, Centro_Universitario centro) {
+    public static int getNumeroAlunos(String codigo, Centro_Universitario_2 centro) {
 
-        List<Estudante> estudantes = getEstudantesPorDisciplina(codigo, centro);
+        List<Estudante_2> estudantes = getEstudantesPorDisciplina(codigo, centro);
         int numAlunos = estudantes.size();
         return numAlunos;
     }
 
-    public static List getDisciplinasPorEstudante(long id, Centro_Universitario centro) {
+    public static List getDisciplinasPorEstudante(long id, Centro_Universitario_2 centro) {
 
         List Disciplinas = new ArrayList();
-        for (Estudante e : centro.getEstudantes()) {
+        for (Estudante_2 e : centro.getEstudantes()) {
             if (id == e.getId()) {
                 Disciplinas = e.getDisciplinasMatriculadas();
             }

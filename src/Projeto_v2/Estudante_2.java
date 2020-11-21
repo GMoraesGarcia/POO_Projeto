@@ -1,9 +1,7 @@
 package Projeto_v2;
 
 
-import Projeto_v1.Centro_Universitario;
-import Projeto_v1.Disciplina;
-import static Projeto_v2.GestaoAcademicaApp_2.getDisciplinasPorEstudante;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,8 +70,8 @@ public abstract class  Estudante_2 {
         }
         return dis;
     }
-    
-    public abstract int getTotalCreditos(long id, Centro_Universitario centro);
+    //metodo abstrato para apresentar as horas complementares dos alunos
+    public abstract int getTotalCreditos();
 
     @Override
     public String toString() {

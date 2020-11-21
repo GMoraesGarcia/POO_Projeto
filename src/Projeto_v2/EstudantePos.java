@@ -5,7 +5,7 @@
  */
 package Projeto_v2;
 
-import Projeto_v1.Centro_Universitario;
+
 
 /**
  *
@@ -36,7 +36,7 @@ public class EstudantePos extends Estudante_2{
     }
 
     @Override
-    public int getTotalCreditos(long id, Centro_Universitario centro) {
+    public int getTotalCreditos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
