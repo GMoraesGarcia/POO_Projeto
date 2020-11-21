@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @author Matheus
  */
-public class Estudante_2 {
+public abstract class  Estudante_2 {
 
     private long id;
     private String nome;
