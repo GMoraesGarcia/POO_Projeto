@@ -73,9 +73,6 @@ public abstract class  Estudante_2 {
     //metodo abstrato para apresentar as horas complementares dos alunos
     public abstract int getTotalCreditos();
 
-    @Override
-    public String toString() {
-        return "Estudante{" + "id=" + id + ", nome=" + nome + ", email=" + email + '}';
-    }
+   
 
 }

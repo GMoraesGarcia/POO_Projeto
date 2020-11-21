@@ -85,7 +85,7 @@ public class Centro_Universitario_2 {
                     Estudante_2 est = new EstudanteGrad(Integer.parseInt(vEstudante[0]),
                             vEstudante[1],
                             vEstudante[2],
-                            Integer.parseInt(vEstudante[3]));
+                            Integer.parseInt(vEstudante[4]));
                     this.estudante.add(est);
                     
                 }else{
@@ -93,8 +93,8 @@ public class Centro_Universitario_2 {
                     Estudante_2 est = new EstudantePos(Integer.parseInt(vEstudante[0]),
                             vEstudante[1],
                             vEstudante[2],
-                            vEstudante[3],
-                            vEstudante[4]);
+                            vEstudante[4],
+                            vEstudante[5]);
                     this.estudante.add(est);
                     
                 }

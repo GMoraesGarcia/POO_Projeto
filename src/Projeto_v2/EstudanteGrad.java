@@ -15,7 +15,7 @@ public class EstudanteGrad extends Estudante_2 {
 
     private int horasAtividade;
 
-    public EstudanteGrad(long id, String nome, String email, int horasAtividade) {
+    public EstudanteGrad(long id, String nome, String email ,int horasAtividade) {
         super(id, nome, email);
     }
 
@@ -38,5 +38,13 @@ public class EstudanteGrad extends Estudante_2 {
         resultado += somaCreditosDisciplina;
         return resultado;
     }
+
+    @Override
+    public String toString() {
+        return horasAtividade + "Estudante{" + "id=" + id + ", nome=" + nome + ", email=" + email + " , Horas Complementares = " +horasAtividade +
+                                "Total de Créditos =" + getTotalCreditos() + '}';
+    }
+    
+    
 
 }
