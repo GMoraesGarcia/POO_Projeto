@@ -5,6 +5,8 @@
  */
 package Projeto_v2;
 
+import java.util.List;
+
 
 
 /**
@@ -37,7 +39,12 @@ public class EstudantePos extends Estudante_2{
 
     @Override
     public int getTotalCreditos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      int ac =0;
+      List<Disciplina_2> dis = getDisciplinasMatriculadas();
+      for(Disciplina_2 d:dis){
+          ac += d.getCreditos();
+      }
+      return ac;
     }
     
     
