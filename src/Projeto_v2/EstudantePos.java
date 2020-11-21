@@ -5,14 +5,41 @@
  */
 package Projeto_v2;
 
+import Projeto_v1.Centro_Universitario;
+
 /**
  *
  * @author Gabriel
  */
 public class EstudantePos extends Estudante_2{
+    private String tema;
+    private String orientador;
     
-    public EstudantePos(long id, String nome, String email) {
+    public EstudantePos(long id, String nome, String email, String tema, String orientador) {
         super(id, nome, email);
     }
+
+    public String getTema() {
+        return tema;
+    }
+
+    public void setTema(String tema) {
+        this.tema = tema;
+    }
+
+    public String getOrientador() {
+        return orientador;
+    }
+
+    public void setOrientador(String orientador) {
+        this.orientador = orientador;
+    }
+
+    @Override
+    public int getTotalCreditos(long id, Centro_Universitario centro) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
 }

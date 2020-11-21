@@ -58,7 +58,7 @@ public class GestaoAcademicaApp_2 {
                     //System.out.println(Senac.getCodigoCredito(id));
                     System.out.println(getDisciplinasPorEstudante(id, Senac));
                     System.out.println("TOTAL DE CRÉDITOS DAS MATRÍCULAS DO ALUNO: ");                    
-                    System.out.println(getTotalCreditosAluno(id, Senac));
+                   // System.out.println(getTotalCreditosAluno(id, Senac));
                     break;
                 case 5:
                     break;
@@ -120,14 +120,5 @@ public class GestaoAcademicaApp_2 {
         return Disciplinas;
     }
 
-    public static int getTotalCreditosAluno(long id, Centro_Universitario centro) {
-
-        List<Disciplina> disciplinas = getDisciplinasPorEstudante(id, centro);
-        int creditos = 0;
-        for (Disciplina d : disciplinas) {
-            creditos += d.getCreditos();
-        }
-
-        return creditos;
-    }
+    
 }

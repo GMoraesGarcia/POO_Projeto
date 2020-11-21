@@ -1,6 +1,9 @@
 package Projeto_v2;
 
 
+import Projeto_v1.Centro_Universitario;
+import Projeto_v1.Disciplina;
+import static Projeto_v2.GestaoAcademicaApp_2.getDisciplinasPorEstudante;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,10 +13,10 @@ import java.util.List;
  */
 public abstract class  Estudante_2 {
 
-    private long id;
-    private String nome;
-    private String email;
-    private List<Matricula_2> matricula;
+    protected long id;
+    protected String nome;
+    protected String email;
+    protected List<Matricula_2> matricula;
 
     //contrutor
     public Estudante_2(long id, String nome, String email) {
@@ -69,6 +72,8 @@ public abstract class  Estudante_2 {
         }
         return dis;
     }
+    
+    public abstract int getTotalCreditos(long id, Centro_Universitario centro);
 
     @Override
     public String toString() {
