@@ -73,7 +73,10 @@ public class GestaoAcademicaApp_2 {
 
         for (Estudante_2 e : centro.getEstudantes()) {
 
-            nomeNumero.add("\nEstudante {id = " + e.getId() + " Nome = " + e.getNome() + "}");
+            if(e instanceof EstudanteGrad)
+                 nomeNumero.add("\nEstudante {id = " + e.getId() + "/ Nome = " + e.getNome() +"/ Créditos "+e.getTotalCreditos()+"/ Horas complementares "+ ((EstudanteGrad) e).getHorasAtividade()+"}");
+            else
+                 nomeNumero.add("\nEstudante {id = " + e.getId() + "/ Nome = " + e.getNome() +"/ Créditos "+e.getTotalCreditos()+"/ Tema = "+ ((EstudantePos) e).getTema()+ "/ Orientador = "+((EstudantePos) e).getOrientador()+"}");
 
         }
         return nomeNumero;

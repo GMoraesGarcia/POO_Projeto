@@ -19,7 +19,7 @@ public class EstudantePos extends Estudante_2{
     
     public EstudantePos(long id, String nome, String email, String tema, String orientador) {
         super(id, nome, email);
-        this.tema = nome;
+        this.tema = tema;
         this.orientador = orientador;
     }
 
