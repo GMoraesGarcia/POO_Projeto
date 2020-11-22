@@ -16,9 +16,9 @@ public class Centro_UniversitarioTest_2 {
     private final String nomeCentro_UniversitarioEsperado;
     private List<Disciplina_2> disciplinasArray;
     private List<Estudante_2> estudantesArray;
-    private List<Matricula_2> matriculasPorEstudante;
+    private List<Estudante_2> matriculasPorEstudante;
     private List<Matricula_2> matriculasPorDisciplina;
-    private String[][] matriculasArray;
+    private List<Matricula_2> matriculasArray;
 
     public Centro_UniversitarioTest_2() throws FileNotFoundException {
         nomeCentro_UniversitarioEsperado = "Centro_Universitario SENAC";
@@ -93,26 +93,31 @@ public class Centro_UniversitarioTest_2 {
         List<Matricula_2> matriculas = null;
         estudantesArray = centro_universitario.getEstudantes();
         for (Estudante_2 est : estudantes) {
-            matriculasPorEstudante = est.getMatriculas();
+            
+            matriculasArray = est.getMatriculas();
         }
-
-        for (int i = 0; i < estudantesArray.size(); i++) {
-            Estudante_2 estudanteArray = estudantesArray.get(i);
-            int id = (int) estudanteArray.getId();
-            Estudante_2 estudante = findEstudanteById(id, estudantes);
-            assertEquals(matriculasPorEstudante.get(i), estudante.getMatriculas().size());
+        for (Disciplina_2 dis : disciplinas) {
+            matriculasPorEstudante = dis.getEstudantesMatriculados();
         }
+        
 
-        for (int i = 0; i < disciplinasArray.size(); i++) {
-            Disciplina_2 disciplinaArray = disciplinasArray.get(i);
-            String codigo = disciplinaArray.getCodigo();
-            Disciplina_2 disciplina = findDisciplinaByCodigo(codigo, disciplinas);
-            assertEquals(matriculasPorDisciplina.get(i), disciplina.getMatriculas().size());
-        }
-
-        for (String[] matriculaArray : matriculasArray) {
-            int idEstudante = Integer.parseInt(matriculaArray[0]);
-            String codigoDisciplina = matriculaArray[1];
+//        for (int i = 0; i < estudantesArray.size(); i++) {
+//            Estudante_2 estudanteArray = estudantesArray.get(i);
+//            int id = (int) estudanteArray.getId();
+//            Estudante_2 estudante = findEstudanteById(id, estudantes);
+//            assertEquals(matriculasPorEstudante.get(i), estudante.getMatriculas().size());
+//        }
+//
+//        for (int i = 0; i < disciplinasArray.size(); i++) {
+//            Disciplina_2 disciplinaArray = disciplinasArray.get(i);
+//            String codigo = disciplinaArray.getCodigo();
+//            Disciplina_2 disciplina = findDisciplinaByCodigo(codigo, disciplinas);
+//            assertEquals(matriculasPorDisciplina.get(i), disciplina.getMatriculas().size());
+//        }
+        int cont = 0;
+        for (Matricula_2 matriculaArray : matriculasArray) {
+            int idEstudante = (int) matriculasArray.get(cont).getEstudante().getId();
+            String codigoDisciplina = matriculaArray.getDisciplina().getCodigo();
             Estudante_2 estudante = findEstudanteById(idEstudante, estudantes);
             Disciplina_2 disciplina = findDisciplinaByCodigo(codigoDisciplina, disciplinas);
 
@@ -137,6 +142,7 @@ public class Centro_UniversitarioTest_2 {
                 }
             }
             assertNotNull(matriculaEncontradaInDisciplina);
+            cont++;
         }
     }
 }
