@@ -93,27 +93,13 @@ public class Centro_UniversitarioTest_2 {
         List<Matricula_2> matriculas = null;
         estudantesArray = centro_universitario.getEstudantes();
         for (Estudante_2 est : estudantes) {
-            
+
             matriculasArray = est.getMatriculas();
         }
         for (Disciplina_2 dis : disciplinas) {
             matriculasPorEstudante = dis.getEstudantesMatriculados();
         }
-        
 
-//        for (int i = 0; i < estudantesArray.size(); i++) {
-//            Estudante_2 estudanteArray = estudantesArray.get(i);
-//            int id = (int) estudanteArray.getId();
-//            Estudante_2 estudante = findEstudanteById(id, estudantes);
-//            assertEquals(matriculasPorEstudante.get(i), estudante.getMatriculas().size());
-//        }
-//
-//        for (int i = 0; i < disciplinasArray.size(); i++) {
-//            Disciplina_2 disciplinaArray = disciplinasArray.get(i);
-//            String codigo = disciplinaArray.getCodigo();
-//            Disciplina_2 disciplina = findDisciplinaByCodigo(codigo, disciplinas);
-//            assertEquals(matriculasPorDisciplina.get(i), disciplina.getMatriculas().size());
-//        }
         int cont = 0;
         for (Matricula_2 matriculaArray : matriculasArray) {
             int idEstudante = (int) matriculasArray.get(cont).getEstudante().getId();
@@ -144,5 +130,15 @@ public class Centro_UniversitarioTest_2 {
             assertNotNull(matriculaEncontradaInDisciplina);
             cont++;
         }
+    }
+
+    // testar se é aluno de graduação e pos
+    @Test
+    public void testEstudante() {
+        List<Estudante_2> estudantes = centro_universitario.getEstudantes();        
+        Estudante_2 estudanteTesteG = estudantes.get(0);
+        Estudante_2 estudanteTesteP = estudantes.get(4);
+        assertTrue(estudanteTesteG instanceof EstudanteGrad);
+        assertTrue(estudanteTesteP instanceof EstudantePos);
     }
 }
