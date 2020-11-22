@@ -15,8 +15,9 @@ public class EstudanteGrad extends Estudante_2 {
 
     private int horasAtividade;
 
-    public EstudanteGrad(long id, String nome, String email ,int horasAtividade) {
+    public EstudanteGrad(long id, String nome, String email, int horasAtividade) {
         super(id, nome, email);
+        this.horasAtividade = horasAtividade;
     }
 
     public int getHorasAtividade() {
@@ -41,10 +42,8 @@ public class EstudanteGrad extends Estudante_2 {
 
     @Override
     public String toString() {
-        return "Estudante Graduação{" + "id=" + id + ", nome=" + nome + ", email=" + email + " , Horas Complementares = " +horasAtividade +
-                                "Total de Créditos =" + getTotalCreditos() + '}';
+        return "\n" + " Estudante de Graduação{" + "id= " + id + ", nome= " + nome + ", email= " + email + " , Horas Complementares = " + horasAtividade
+                + " Total de Créditos = " + getTotalCreditos() + '}';
     }
-    
-    
 
 }

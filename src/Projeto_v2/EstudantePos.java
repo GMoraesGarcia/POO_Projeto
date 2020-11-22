@@ -19,6 +19,8 @@ public class EstudantePos extends Estudante_2{
     
     public EstudantePos(long id, String nome, String email, String tema, String orientador) {
         super(id, nome, email);
+        this.tema = nome;
+        this.orientador = orientador;
     }
 
     public String getTema() {
@@ -49,8 +51,8 @@ public class EstudantePos extends Estudante_2{
     
      @Override
     public String toString() {
-        return "Estudante Pos Graduação{" + "id=" + id + ", nome=" + nome + ", email=" + email + "Tema= " + tema + "Orientador = " +orientador +
-                "Total de Créditos=" + getTotalCreditos() +'}';
+        return "\n" + " Estudante pos-graduação{" + "id= " + id + ", nome= " + nome + ", email= " + email + " Tema= " + tema + " Orientador = " +orientador +
+                " Total de Créditos= " + getTotalCreditos() +'}';
                             
     }
     

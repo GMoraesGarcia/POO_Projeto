@@ -1,3 +1,9 @@
-21899442:Jonatas Gomes:21899442@sp.senac.br:GRAD:30
-10852580:Lucas Lopes:10852580@sp.senac.br:POS:Teste automatizado:Josao
-09402877:Renata Silveira:09402877@sp.senac.br:GRAD:120
+1000:Marco Antonio:marco@sp.senac.br:GRAD:30
+1001:Angela Maria:amaria@sp.senac.br:GRAD:120
+1002:Roberto Carlos:roberto@sp.senac.br:GRAD:50
+1003:Leonidas:leonidas@sp.senac.br:GRAD:300
+1004:Lucas Lopes:lucas@sp.senac.br:POS:Teste automatizado:Josao
+1005:Ana Clara:aninha@sp.senac.br:POS:Engenharia de Dados:Maria Marcondes
+1006:Reinaldo Silva:reinaldo@sp.senac.br:POS:Teste automatizado:Josao
+1007:Rogerio Santos:rogerio@sp.senac.br:POS:Engenharia de Dados:Maria Marcondes
+1008:Rodrigo Souza:rodrigo@sp.senac.br:POS:Teste automatizado:Josao

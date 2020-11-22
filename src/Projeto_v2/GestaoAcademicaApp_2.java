@@ -5,7 +5,6 @@
  */
 package Projeto_v2;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -36,19 +35,19 @@ public class GestaoAcademicaApp_2 {
             switch (opcao) {
 
                 case 1:
-                    System.out.println("LISTA DE ESTUDANTES: ");                    
-                    System.out.println(getNomeNumero2(Senac));
+                    System.out.println("LISTA DE ESTUDANTES: ");
+                    System.out.println(getNomeNumero(Senac));
                     break;
                 case 2:
-                    System.out.println("LISTA DE CÓDIGOS DAS DISCIPLINAS: ");                    
-                    System.out.println(getCodigoDisciplina2(Senac));
+                    System.out.println("LISTA DE CÓDIGOS DAS DISCIPLINAS: ");
+                    System.out.println(getCodigoDisciplina(Senac));
                     break;
                 case 3:
                     System.out.println("DIGITE O CÓDIGO DA DISCIPLINA: ");
                     codigo = sc.next();
-                    System.out.println("LISTA DE MATRICULADOS NA DISCIPLINA: ");                    
+                    System.out.println("LISTA DE MATRICULADOS NA DISCIPLINA: ");
                     System.out.println(getEstudantesPorDisciplina(codigo, Senac));
-                    System.out.println("NÚMERO TOTAL DE ALUNOS MATRICULADOS NA DISCIPLINA: ");                    
+                    System.out.println("NÚMERO TOTAL DE ALUNOS MATRICULADOS NA DISCIPLINA: ");
                     System.out.println(getNumeroAlunos(codigo, Senac));
                     break;
                 case 4:
@@ -57,8 +56,8 @@ public class GestaoAcademicaApp_2 {
                     System.out.println("LISTA DE INFORMAÇÕES DAS DISCIPLINAS QUE O ALUNO ESTÁ MATRICULADO: ");
                     //System.out.println(Senac.getCodigoCredito(id));
                     System.out.println(getDisciplinasPorEstudante(id, Senac));
-                    System.out.println("TOTAL DE CRÉDITOS DAS MATRÍCULAS DO ALUNO: ");                    
-                   // System.out.println(getTotalCreditosAluno(id, Senac));
+                    System.out.println("TOTAL DE CRÉDITOS DAS MATRÍCULAS DO ALUNO: ");
+                    // System.out.println(getTotalCreditosAluno(id, Senac));
                     break;
                 case 5:
                     break;
@@ -68,7 +67,7 @@ public class GestaoAcademicaApp_2 {
         }
     }
 
-    public static ArrayList getNomeNumero2(Centro_Universitario_2 centro) {
+    public static ArrayList getNomeNumero(Centro_Universitario_2 centro) {
 
         ArrayList nomeNumero = new ArrayList();
 
@@ -80,7 +79,7 @@ public class GestaoAcademicaApp_2 {
         return nomeNumero;
     }
 
-    public static ArrayList getCodigoDisciplina2(Centro_Universitario_2 centro) {
+    public static ArrayList getCodigoDisciplina(Centro_Universitario_2 centro) {
 
         ArrayList codDisciplina = new ArrayList();
 
@@ -120,5 +119,4 @@ public class GestaoAcademicaApp_2 {
         return Disciplinas;
     }
 
-    
 }

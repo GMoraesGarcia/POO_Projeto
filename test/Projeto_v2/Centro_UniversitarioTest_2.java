@@ -95,7 +95,6 @@ public class Centro_UniversitarioTest_2 {
         for (Estudante_2 est : estudantes) {
             matriculasPorEstudante = est.getMatriculas();
         }
-        
 
         for (int i = 0; i < estudantesArray.size(); i++) {
             Estudante_2 estudanteArray = estudantesArray.get(i);
