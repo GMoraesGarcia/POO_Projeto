@@ -53,11 +53,11 @@ public class GestaoAcademicaApp_2 {
                 case 4:
                     System.out.println("DIGITE O NÚMERO DO ESTUDANTE: ");
                     id = sc.nextLong();
-                    System.out.println("LISTA DE INFORMAÇÕES DAS DISCIPLINAS QUE O ALUNO ESTÁ MATRICULADO: ");
-                    //System.out.println(Senac.getCodigoCredito(id));
+                    System.out.println("LISTA DE INFORMAÇÕES DAS DISCIPLINAS QUE O ALUNO ESTÁ MATRICULADO: ");                    
                     System.out.println(getDisciplinasPorEstudante(id, Senac));
                     System.out.println("TOTAL DE CRÉDITOS DAS MATRÍCULAS DO ALUNO: ");
-                    // System.out.println(getTotalCreditosAluno(id, Senac));
+                    Estudante_2 est = findEstudanteById((int)id , Senac.getEstudantes());
+                    System.out.println(est.getTotalCreditos());
                     break;
                 case 5:
                     break;
@@ -117,6 +117,15 @@ public class GestaoAcademicaApp_2 {
             }
         }
         return Disciplinas;
+    }
+    
+    public static Estudante_2 findEstudanteById(int id, List<Estudante_2> estudantes) {
+        for (Estudante_2 estudante : estudantes) {
+            if (id == estudante.getId()) {
+                return estudante; //estudante encontrado
+            }
+        }
+        return null; //estudante não encontrado
     }
 
 }
