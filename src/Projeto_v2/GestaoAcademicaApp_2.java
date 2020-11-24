@@ -57,7 +57,12 @@ public class GestaoAcademicaApp_2 {
                     System.out.println(getDisciplinasPorEstudante(id, Senac));
                     System.out.println("TOTAL DE CRÉDITOS DAS MATRÍCULAS DO ALUNO: ");
                     Estudante est = findEstudanteById((int) id, Senac.getEstudantes());
-                    System.out.println(est.getTotalCreditos());
+                    if (est != null) {
+                        System.out.println(est.getTotalCreditos());
+                    } else {
+                        System.out.println("não ha creditos");
+                    }
+
                     break;
                 case 5:
                     break;
