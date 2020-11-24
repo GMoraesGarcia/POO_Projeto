@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Gabriel
  */
-public class EstudanteGrad extends Estudante_2 {
+public class EstudanteGrad extends Estudante {
 
     private int horasAtividade;
 
@@ -30,10 +30,10 @@ public class EstudanteGrad extends Estudante_2 {
 
     @Override
     public int getTotalCreditos() {
-        List<Disciplina_2> dis = super.getDisciplinasMatriculadas();
+        List<Disciplina> dis = super.getDisciplinasMatriculadas();
         int somaCreditosDisciplina = 0;
         int resultado = horasAtividade;
-        for (Disciplina_2 d : dis) {
+        for (Disciplina d : dis) {
             somaCreditosDisciplina += d.getCreditos();
         }
         resultado += somaCreditosDisciplina;

@@ -16,14 +16,14 @@ import java.util.List;
  *
  * @author Matheus
  */
-public class Centro_Universitario_2 {
+public class Centro_Universitario {
 
     private String nome;
-    private List<Estudante_2> estudante;
-    private List<Disciplina_2> disciplina;
+    private List<Estudante> estudante;
+    private List<Disciplina> disciplina;
 
     //construtor
-    public Centro_Universitario_2(String nome) {
+    public Centro_Universitario(String nome) {
         this.nome = nome;
         this.estudante = new ArrayList();
         this.disciplina = new ArrayList();
@@ -37,19 +37,19 @@ public class Centro_Universitario_2 {
         this.nome = nome;
     }
 
-    public List<Estudante_2> getEstudantes() {
+    public List<Estudante> getEstudantes() {
         return estudante;
     }
 
-    public void setEstudante(ArrayList<Estudante_2> estudante) {
+    public void setEstudante(ArrayList<Estudante> estudante) {
         this.estudante = estudante;
     }
 
-    public List<Disciplina_2> getDisciplinas() {
+    public List<Disciplina> getDisciplinas() {
         return disciplina;
     }
 
-    public void setDisciplina(ArrayList<Disciplina_2> disciplina) {
+    public void setDisciplina(ArrayList<Disciplina> disciplina) {
         this.disciplina = disciplina;
     }
 
@@ -60,7 +60,7 @@ public class Centro_Universitario_2 {
             BufferedReader r2 = new BufferedReader(new FileReader(arqDisciplina));
             BufferedReader r3 = new BufferedReader(new FileReader(arqMatricula));
 
-            Matricula_2 mat = null;
+            Matricula mat = null;
 
             String vEstudante[];
             String vDisciplina[];
@@ -82,7 +82,7 @@ public class Centro_Universitario_2 {
 
                 if (vEstudante.length == 5) {
 
-                    Estudante_2 est = new EstudanteGrad(Integer.parseInt(vEstudante[0]),
+                    Estudante est = new EstudanteGrad(Integer.parseInt(vEstudante[0]),
                             vEstudante[1],
                             vEstudante[2],
                             Integer.parseInt(vEstudante[4]));
@@ -90,7 +90,7 @@ public class Centro_Universitario_2 {
                     
                 }else{
                     
-                    Estudante_2 est = new EstudantePos(Integer.parseInt(vEstudante[0]),
+                    Estudante est = new EstudantePos(Integer.parseInt(vEstudante[0]),
                             vEstudante[1],
                             vEstudante[2],
                             vEstudante[4],
@@ -111,7 +111,7 @@ public class Centro_Universitario_2 {
                 }
                 vDisciplina = linhaArqDis.split(":");
 
-                Disciplina_2 dis = new Disciplina_2(vDisciplina[0], Integer.parseInt(vDisciplina[1]));
+                Disciplina dis = new Disciplina(vDisciplina[0], Integer.parseInt(vDisciplina[1]));
 
                 this.disciplina.add(dis);
             }
@@ -137,7 +137,7 @@ public class Centro_Universitario_2 {
 
                             if (vMatricula[1].equals(disciplina.get(j).getCodigo())) {
 
-                                mat = new Matricula_2(estudante.get(i), disciplina.get(j));
+                                mat = new Matricula(estudante.get(i), disciplina.get(j));
 
                                 this.estudante.get(i).addMatricula(mat);
                                 this.disciplina.get(j).addMatricula(mat);

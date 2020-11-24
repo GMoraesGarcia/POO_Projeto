@@ -8,14 +8,14 @@ import java.util.List;
  *
 * @author Matheus
  */
-public class Disciplina_2 {
+public class Disciplina {
 
     private String codigo;
     private int creditos;
-    private List<Matricula_2> matricula;
+    private List<Matricula> matricula;
 
     //construtor
-    public Disciplina_2(String codigo, int creditos) {
+    public Disciplina(String codigo, int creditos) {
         this.codigo = codigo;
         this.creditos = creditos;
         this.matricula = new ArrayList<>();
@@ -37,22 +37,22 @@ public class Disciplina_2 {
         this.creditos = creditos;
     }
 
-    public List<Matricula_2> getMatriculas() {
+    public List<Matricula> getMatriculas() {
         return matricula;
     }
 
-    public void setMatriculas(ArrayList<Matricula_2> matriculas) {
+    public void setMatriculas(ArrayList<Matricula> matriculas) {
         this.matricula = matriculas;
     }
 
-    public void addMatricula(Matricula_2 m) {
+    public void addMatricula(Matricula m) {
         matricula.add(m);
     }
 
-    public List<Estudante_2> getEstudantesMatriculados() {
-        List<Estudante_2> est = new ArrayList<>();
+    public List<Estudante> getEstudantesMatriculados() {
+        List<Estudante> est = new ArrayList<>();
 
-        for (Matricula_2 d : matricula) {
+        for (Matricula d : matricula) {
             if (d.getDisciplina().codigo == this.codigo) {
                 est.add(d.getEstudante());
             }

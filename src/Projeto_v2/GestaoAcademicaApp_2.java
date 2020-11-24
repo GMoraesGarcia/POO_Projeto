@@ -15,7 +15,7 @@ public class GestaoAcademicaApp_2 {
 
         Scanner sc = new Scanner(System.in);
 
-        Centro_Universitario_2 Senac = new Centro_Universitario_2("Senac");
+        Centro_Universitario Senac = new Centro_Universitario("Senac");
         Senac.carregarDadosArquivo("disciplinas.txt", "estudantes.txt", "matriculas.txt");
         int opcao = 0;
         String codigo;
@@ -53,10 +53,10 @@ public class GestaoAcademicaApp_2 {
                 case 4:
                     System.out.println("DIGITE O NÚMERO DO ESTUDANTE: ");
                     id = sc.nextLong();
-                    System.out.println("LISTA DE INFORMAÇÕES DAS DISCIPLINAS QUE O ALUNO ESTÁ MATRICULADO: ");                    
+                    System.out.println("LISTA DE INFORMAÇÕES DAS DISCIPLINAS QUE O ALUNO ESTÁ MATRICULADO: ");
                     System.out.println(getDisciplinasPorEstudante(id, Senac));
                     System.out.println("TOTAL DE CRÉDITOS DAS MATRÍCULAS DO ALUNO: ");
-                    Estudante_2 est = findEstudanteById((int)id , Senac.getEstudantes());
+                    Estudante est = findEstudanteById((int) id, Senac.getEstudantes());
                     System.out.println(est.getTotalCreditos());
                     break;
                 case 5:
@@ -67,36 +67,37 @@ public class GestaoAcademicaApp_2 {
         }
     }
 
-    public static ArrayList getNomeNumero(Centro_Universitario_2 centro) {
+    public static ArrayList getNomeNumero(Centro_Universitario centro) {
 
         ArrayList nomeNumero = new ArrayList();
 
-        for (Estudante_2 e : centro.getEstudantes()) {
+        for (Estudante e : centro.getEstudantes()) {
 
-            if(e instanceof EstudanteGrad)
-                 nomeNumero.add("\nEstudante {id = " + e.getId() + "/ Nome = " + e.getNome() +"/ Créditos "+e.getTotalCreditos()+"/ Horas complementares "+ ((EstudanteGrad) e).getHorasAtividade()+"}");
-            else
-                 nomeNumero.add("\nEstudante {id = " + e.getId() + "/ Nome = " + e.getNome() +"/ Créditos "+e.getTotalCreditos()+"/ Tema = "+ ((EstudantePos) e).getTema()+ "/ Orientador = "+((EstudantePos) e).getOrientador()+"}");
+            if (e instanceof EstudanteGrad) {
+                nomeNumero.add("\nEstudante {id = " + e.getId() + "/ Nome = " + e.getNome() + "/ Créditos " + e.getTotalCreditos() + "/ Horas complementares " + ((EstudanteGrad) e).getHorasAtividade() + "}");
+            } else {
+                nomeNumero.add("\nEstudante {id = " + e.getId() + "/ Nome = " + e.getNome() + "/ Créditos " + e.getTotalCreditos() + "/ Tema = " + ((EstudantePos) e).getTema() + "/ Orientador = " + ((EstudantePos) e).getOrientador() + "}");
+            }
 
         }
         return nomeNumero;
     }
 
-    public static ArrayList getCodigoDisciplina(Centro_Universitario_2 centro) {
+    public static ArrayList getCodigoDisciplina(Centro_Universitario centro) {
 
         ArrayList codDisciplina = new ArrayList();
 
-        for (Disciplina_2 d : centro.getDisciplinas()) {
+        for (Disciplina d : centro.getDisciplinas()) {
 
             codDisciplina.add("\n{Código da disciplina: " + d.getCodigo() + "}");
         }
         return codDisciplina;
     }
 
-    public static List getEstudantesPorDisciplina(String codigo, Centro_Universitario_2 centro) {
+    public static List getEstudantesPorDisciplina(String codigo, Centro_Universitario centro) {
 
         List estudantes = new ArrayList();
-        for (Disciplina_2 d : centro.getDisciplinas()) {
+        for (Disciplina d : centro.getDisciplinas()) {
             if (codigo.equals(d.getCodigo())) {
                 estudantes = d.getEstudantesMatriculados();
             }
@@ -104,26 +105,26 @@ public class GestaoAcademicaApp_2 {
         return estudantes;
     }
 
-    public static int getNumeroAlunos(String codigo, Centro_Universitario_2 centro) {
+    public static int getNumeroAlunos(String codigo, Centro_Universitario centro) {
 
-        List<Estudante_2> estudantes = getEstudantesPorDisciplina(codigo, centro);
+        List<Estudante> estudantes = getEstudantesPorDisciplina(codigo, centro);
         int numAlunos = estudantes.size();
         return numAlunos;
     }
 
-    public static List getDisciplinasPorEstudante(long id, Centro_Universitario_2 centro) {
+    public static List getDisciplinasPorEstudante(long id, Centro_Universitario centro) {
 
         List Disciplinas = new ArrayList();
-        for (Estudante_2 e : centro.getEstudantes()) {
+        for (Estudante e : centro.getEstudantes()) {
             if (id == e.getId()) {
                 Disciplinas = e.getDisciplinasMatriculadas();
             }
         }
         return Disciplinas;
     }
-    
-    public static Estudante_2 findEstudanteById(int id, List<Estudante_2> estudantes) {
-        for (Estudante_2 estudante : estudantes) {
+
+    public static Estudante findEstudanteById(int id, List<Estudante> estudantes) {
+        for (Estudante estudante : estudantes) {
             if (id == estudante.getId()) {
                 return estudante; //estudante encontrado
             }

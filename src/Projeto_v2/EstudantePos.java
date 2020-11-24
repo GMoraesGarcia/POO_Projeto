@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Gabriel
  */
-public class EstudantePos extends Estudante_2{
+public class EstudantePos extends Estudante{
     private String tema;
     private String orientador;
     
@@ -42,8 +42,8 @@ public class EstudantePos extends Estudante_2{
     @Override
     public int getTotalCreditos() {
       int ac =0;
-      List<Disciplina_2> dis = getDisciplinasMatriculadas();
-      for(Disciplina_2 d:dis){
+      List<Disciplina> dis = getDisciplinasMatriculadas();
+      for(Disciplina d:dis){
           ac += d.getCreditos();
       }
       return ac;

@@ -9,15 +9,15 @@ import java.util.List;
  *
  * @author Matheus
  */
-public abstract class  Estudante_2 {
+public abstract class  Estudante {
 
     protected long id;
     protected String nome;
     protected String email;
-    protected List<Matricula_2> matricula;
+    protected List<Matricula> matricula;
 
     //contrutor
-    public Estudante_2(long id, String nome, String email) {
+    public Estudante(long id, String nome, String email) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -48,22 +48,22 @@ public abstract class  Estudante_2 {
         this.email = email;
     }
 
-    public List<Matricula_2> getMatriculas() {
+    public List<Matricula> getMatriculas() {
         return matricula;
     }
 
-    public void setMatricula(ArrayList<Matricula_2> matricula) {
+    public void setMatricula(ArrayList<Matricula> matricula) {
         this.matricula = matricula;
     }
 
-    public void addMatricula(Matricula_2 m) {
+    public void addMatricula(Matricula m) {
         matricula.add(m);
     }
 
-    public List<Disciplina_2> getDisciplinasMatriculadas() {
-        List<Disciplina_2> dis = new ArrayList<>();
+    public List<Disciplina> getDisciplinasMatriculadas() {
+        List<Disciplina> dis = new ArrayList<>();
 
-        for (Matricula_2 d : matricula) {
+        for (Matricula d : matricula) {
             if (d.getEstudante().id == this.id) {
                 dis.add(d.getDisciplina());
             }
